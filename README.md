@@ -28,3 +28,13 @@ When running this solution, please set the Server project as Startup project if 
   - A DbContext (EF Core 7) which is tied to a SQLite db called Example.db (this is to have a working db out of the box feel free to retarget to any that EF-Core supports!)
   - Usage of Automapper
 
+# Technologies / Libs included at a glance.
+- Entity Framework Core 7
+- Moq
+- Automapper
+- FluentValidation & Blazored.FluentValidation (which is so good i've even contributed :D, FluentValidation is my preference for swapping out the standard System.ComponentModel.DataAnnotations decorators)
+- Bunit
+- Xunit
+- System.Text.Json
+- Microsoft.Extensions.Http  (for configuring HttpClient and HttpMessageHandler in IHttpClientFactory, for me this provides the nice services.AddHttpClient<T> method for adding HttpClients to DI i use in Client/Program.cs startup)
+- 
