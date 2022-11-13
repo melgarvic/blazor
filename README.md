@@ -4,6 +4,11 @@ The Blazor app in this template is served from the ASP.NET Core Server.
 
 When running this solution, please set the Server project as Startup project if you're running this in Visual Studio or if running this via VS Code please cd into the Server Project folder and run `dotnet run` in your cmd/powershell/terminal of choice
 
+# What you need to run this starter project?
+- The NET 7 SDK (https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+- VS Code or Visual Studio 2022 (Current Latest, feel free to use preview however i've only tested this on current)
+- Should be able to run on Windows/Mac/Linux (i haven't tested this, just running off of .NET 7's ability to be cross platform), if not please let me know as there might be a setting or silly config i'm missing.
+
 # At a glance this project contains:
 - A Blazor Client (containing the default blazor project pieces minus the WeatherAPI bits)
 - ASP.NET CORE Server (API)
