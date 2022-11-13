@@ -37,4 +37,3 @@ When running this solution, please set the Server project as Startup project if 
 - Xunit
 - System.Text.Json
 - Microsoft.Extensions.Http  (for configuring HttpClient and HttpMessageHandler in IHttpClientFactory, for me this provides the nice services.AddHttpClient<T> method for adding HttpClients to DI i use in Client/Program.cs startup)
-- 
