@@ -1,8 +1,10 @@
-# Blazor with API Starter! (.NET 7)
+# Blazor with API Starter! 🟪 (.NET 7) 🟪
 This is a starter project / template which consists of a Blazor frontend and a ASP.NET Core backend.
 The Blazor app in this template is served from the ASP.NET Core Server.
 
 When running this solution, please set the Server project as Startup project if you're running this in Visual Studio or if running this via VS Code please cd into the Server Project folder and run `dotnet run` in your cmd/powershell/terminal of choice
+
+BTW! Feel absolutely free to fork/clone this repo and remix it to create your own starter ❤️ e.g. like swapping out EF Core for Dapper or any other ORM or Data Access Library you prefer. 
 
 # What you need to run this starter project?
 - The NET 7 SDK (https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
