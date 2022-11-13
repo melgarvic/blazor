@@ -17,7 +17,6 @@ namespace Blazor.Starter.Client.Services.HttpClients
             _logger = logger;
         }
 
-
         public async Task CreatePerson(PersonDto person)
         {          
             _logger.LogDebug($"[Person Service] Creating Person {person.PersonId}...");
@@ -25,30 +24,32 @@ namespace Blazor.Starter.Client.Services.HttpClients
             var personJson = JsonSerializer.Serialize(person);
             var contentToPost = new StringContent(personJson, Encoding.UTF8, "application/json");
 
-            var result = await httpClient.PostAsync($"api/Example/CreatePerson", contentToPost, CancellationToken.None);
+            _ = await httpClient.PostAsync($"api/Example/CreatePerson", contentToPost, CancellationToken.None);
 
             _logger.LogDebug($"[Person Service] Person {person.PersonId} Created!");
-            _logger.LogDebug($"{result.StatusCode}");
         }
 
         public async Task<List<PersonDto>> GetAllPeople()
         {
-            _logger.LogDebug("[Person Service] Getting all customers...");
+            _logger.LogDebug("[Person Service] Getting all People...");
 
             var result = await httpClient.GetFromJsonAsync<List<PersonDto>>("api/Example/GetAll", CancellationToken.None);
 
-            _logger.LogDebug("[Person Service] Getting all customers SUCCESSFUL");
+            if(result is null)
+                return (List<PersonDto>)Enumerable.Empty<PersonDto>();
+
+            _logger.LogDebug("[Person Service] Getting all People SUCCESSFUL");
 
             return result;
         }
 
         public async Task<PersonDto?> GetPersonById(Guid Id)
         {
-            _logger.LogDebug($"[Customer Service] Getting customer {Id}...");
+            _logger.LogDebug($"[Person Service] Getting Person {Id}...");
 
-            var result = await httpClient.GetFromJsonAsync<PersonDto>($"api/Example/GetCustomerById?Id={Id}", CancellationToken.None);
+            var result = await httpClient.GetFromJsonAsync<PersonDto>($"api/Example/GetPersonById?Id={Id}", CancellationToken.None);
 
-            _logger.LogDebug($"[Customer Service] Customer {Id} found!");
+            _logger.LogDebug($"[Person Service] Person {Id} found!");
 
             return result;
         }
